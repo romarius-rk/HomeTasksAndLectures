@@ -1,4 +1,4 @@
-package lec3.task1;
+package commons;
 
 import java.util.Scanner;
 
@@ -8,4 +8,11 @@ public class CmdReader {
         System.out.println(msg);
         return scanner.nextLine();
     }
+
+    public int readInt(String msg) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(msg);
+        return Integer.parseInt(scanner.nextLine());
+    }
 }
+
