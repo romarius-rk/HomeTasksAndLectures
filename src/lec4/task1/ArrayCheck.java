@@ -15,7 +15,7 @@ public class ArrayCheck {
     public static void main(String[] args) {
         ArrayStartTools arrayInit = new ArrayStartTools();
         CmdReader reader = new CmdReader();
-        int[] array = arrayInit.arrayInit(reader.readInt("Какова длинна нашего массива, Милорд?"));
+        int[] array = arrayInit.generateRandomArray(reader.readInt("Какова длинна нашего массива, Милорд?"));
         int enteredNumber = reader.readInt("Какое число ищем, Милорд? ");
         boolean status = arrayInit.arrayChecker(enteredNumber, array);
         if (status) {

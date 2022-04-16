@@ -15,7 +15,7 @@ public class Arrows {
     public static void main(String[] args) {
         ArrayStartTools array = new ArrayStartTools();
         CmdReader reader = new CmdReader();
-        int[] oneDemArray = array.arrayInit(reader.readInt("Введите длинну массива: "));
+        int[] oneDemArray = array.generateRandomArray(reader.readInt("Введите длинну массива: "));
         array.arrayPrint(oneDemArray);
         System.out.printf("Минимальный элемент массива равен %d%n", array.arrayMin(oneDemArray));
         System.out.printf("Максимальный элемент массива равен %d%n", array.arrayMax(oneDemArray));

@@ -18,7 +18,7 @@ public class ArrayFinderNumberAndDeleteThis {
     public static void main(String[] args) {
         CmdReader reader = new CmdReader();
         ArrayStartTools oneDemArray = new ArrayStartTools();
-        int[] array = oneDemArray.arrayInit(reader.readInt("Enter length array pls: "));
+        int[] array = oneDemArray.generateRandomArray(reader.readInt("Enter length array pls: "));
         oneDemArray.arrayPrint(array);
         int number = reader.readInt("Enter the number we are looking for: ");
         if (oneDemArray.arrayChecker(number, array)) {

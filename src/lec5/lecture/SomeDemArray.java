@@ -3,7 +3,6 @@ package lec5.lecture;
 import commons.ArrayStartTools;
 import commons.CmdReader;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SomeDemArray {

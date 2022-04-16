@@ -1,9 +1,7 @@
 package commons;
 
-import java.util.Arrays;
-
 public class ArrayStartTools {
-    public int[] arrayInit(int length) {
+    public int[] generateRandomArray(int length) {
         int[] arrayRandom = new int[length];
         for (int i = 0; i < length; i++) {
             arrayRandom[i] = randomNumber(-20, 20);
@@ -12,8 +10,8 @@ public class ArrayStartTools {
     }
 
     public void arrayPrint(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        for (int j : array) {
+            System.out.print(j + " ");
         }
         System.out.println();
     }
@@ -21,9 +19,10 @@ public class ArrayStartTools {
     public boolean arrayChecker(int enteredNumber, int[] array) {
         boolean found = false;
 
-        for (int i = 0; i < array.length; i++) {
-            if (enteredNumber == array[i]) {
+        for (int j : array) {
+            if (enteredNumber == j) {
                 found = true;
+                break;
             }
         }
         return found;
@@ -55,9 +54,27 @@ public class ArrayStartTools {
         }
         int[] arrayConverted = new int[array.length - removeCount];
         int g = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != number) {
-                arrayConverted[g] = array[i];
+        for (int j : array) {
+            if (j != number) {
+                arrayConverted[g] = j;
+                g++;
+            }
+        }
+        return arrayConverted;
+    }
+
+    public int[] removeOddFrom(int[] array) {
+        int removeCount = 0;
+        for (int i : array) {
+            if (i % 2 != 0) {
+                removeCount++;
+            }
+        }
+        int[] arrayConverted = new int[array.length - removeCount];
+        int g = 0;
+        for (int j : array) {
+            if (j % 2 == 0) {
+                arrayConverted[g] = j;
                 g++;
             }
         }
@@ -66,22 +83,22 @@ public class ArrayStartTools {
 
     public int arrayMin(int[] array) {
         int min = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] >= min) {
+        for (int j : array) {
+            if (j >= min) {
                 continue;
             }
-            min = array[i];
+            min = j;
         }
         return min;
     }
 
     public int arrayMax(int[] array) {
         int max = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (max >= array[i]) {
+        for (int j : array) {
+            if (max >= j) {
                 continue;
             }
-            max = array[i];
+            max = j;
         }
         return max;
     }
@@ -105,15 +122,15 @@ public class ArrayStartTools {
     }
 
     public void twoDemArrayPrint(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+        for (int[] ints : array) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }
     }
 
-    public int[][] arrayConverter(int[][] array) {
+    public int[][] replaceWithZeroOnEvenIndex(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (i % 2 == 1 || j % 2 == 1) {
@@ -138,9 +155,9 @@ public class ArrayStartTools {
 
     public int arrayMaxIntChecker(int[] oneDemArray) {
         int maxIntCell = 1;
-        for (int i = 0; i < oneDemArray.length; i++) {
-            if (maxIntCell < oneDemArray[i]) {
-                maxIntCell = oneDemArray[i];
+        for (int j : oneDemArray) {
+            if (maxIntCell < j) {
+                maxIntCell = j;
             }
         }
         return maxIntCell;
@@ -149,4 +166,15 @@ public class ArrayStartTools {
     private int randomNumber(int min, int max) {
         return (int) (Math.random() * (max - min) + min);
     }
+
+    public int[] replaceWithZeroOnEvenIndex(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 1) {
+                array[i] = 0;
+            }
+        }
+        return array;
+    }
 }
+
+
