@@ -5,6 +5,12 @@ import commons.CmdReader;
 
 import java.util.Arrays;
 
+/*
+ Создайте массив целых чисел. Напишете программу, которая выводит
+сообщение о том, входит ли заданное число в массив или нет.
+Пусть число для поиска задается с консоли (класс Scanner).
+*/
+
 public class ArrayCheck {
     public static void main(String[] args) {
         ArrayStartTools arrayInit = new ArrayStartTools();
