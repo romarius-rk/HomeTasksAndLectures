@@ -23,6 +23,24 @@ public class ArrayStartTools {
         System.out.println();
     }
 
+    public void arrayPrint(String[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j]);
+            }
+            System.out.println("");
+        }
+    }
+
+    public void arrayPrint(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+
     public boolean arrayChecker(int enteredNumber, int[] array) {
         boolean found = false;
 
@@ -248,6 +266,29 @@ public class ArrayStartTools {
                 return 0;
             }
         }
+    }
+
+    public int[][][] threeDemArrayInit(int length, int higth, int deeps) {
+        int[][][] threeDemArrayRandom = new int[length][higth][deeps];
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < higth; j++) {
+                for (int f = 0; f < deeps; f++) {
+                    threeDemArrayRandom[i][j][f] = randomNumber(1, 99);
+                }
+            }
+        }
+        return threeDemArrayRandom;
+    }
+
+    public int[][][] plusSomeNumberToElemArray(int[][][] array, int number) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                for (int f = 0; f < array[i][j].length; f++) {
+                    array[i][j][f] = array[i][j][f] + number;
+                }
+            }
+        }
+        return array;
     }
 }
 
