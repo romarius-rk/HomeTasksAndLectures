@@ -16,6 +16,13 @@ public class ArrayStartTools {
         System.out.println();
     }
 
+    public void arrayPrint(String[] array) {
+        for (String j : array) {
+            System.out.print(j + " ");
+        }
+        System.out.println();
+    }
+
     public boolean arrayChecker(int enteredNumber, int[] array) {
         boolean found = false;
 
@@ -175,6 +182,72 @@ public class ArrayStartTools {
         }
         return array;
     }
-}
 
+    public int[] bubbleSort(int[] array, int direction) {
+        if (direction != 1 && direction != -1) {
+            System.out.println("Wrong direction. (1 or -1 expected)");
+        }
+        boolean isSorted = false;
+        int buf;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (compareInt(array[i], array[i + 1]) == direction) {
+                    isSorted = false;
+
+                    buf = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = buf;
+                }
+            }
+        }
+        return array;
+    }
+
+    private int compareInt(int a, int b) {
+        if (a > b) {
+            return 1;
+        } else if (a < b) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+
+    public String[] bubbleSort(String[] array, int direction) {
+        if (direction != 1 && direction != -1) {
+            System.out.println("Wrong direction. (1 or -1 expected)");
+        }
+        boolean isSorted = false;
+        String buf;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (compareStringIgnoreCase(array[i], array[i + 1]) == direction) {
+                    isSorted = false;
+
+                    buf = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = buf;
+                }
+            }
+        }
+        return array;
+    }
+
+    private int compareStringIgnoreCase(String str1, String str2) {
+        String s1 = str1.toLowerCase(), s2 = str2.toLowerCase();
+        if (s1.charAt(0) > s2.charAt(0)) {
+            return 1;
+        } else if (s1.charAt(0) < s2.charAt(0)) {
+            return -1;
+        } else {
+            if (s1.length() > 1 && s2.length() > 1) {
+                return compareStringIgnoreCase(s1.substring(1), s2.substring(1));
+            } else {
+                return 0;
+            }
+        }
+    }
+}
 
