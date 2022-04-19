@@ -268,6 +268,42 @@ public class ArrayStartTools {
         }
     }
 
+    public int[][] matrixUtil(int[][] array, int[][] array1) {
+        int[][] result = new int[array.length][array1[0].length];
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[i].length; j++) {
+                for (int k = 0; k < array1.length; k++) {
+                    result[i][j] += array[i][k] * array1[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
+    public int sumElemArray(int[][] array) {
+        int result = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                result += array[i][j];
+            }
+        }
+        return result;
+    }
+
+    public void printArrayDiagonal(int[][] array) {
+        System.out.print("Основная диагональ: ");
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i][i] + " ");
+        }
+        System.out.println();
+
+        System.out.print("Побочная диагональ: ");
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i][array.length - 1 - i] + " ");
+        }
+        System.out.println();
+    }
+
     public int[][][] threeDemArrayInit(int length, int higth, int deeps) {
         int[][][] threeDemArrayRandom = new int[length][higth][deeps];
         for (int i = 0; i < length; i++) {
