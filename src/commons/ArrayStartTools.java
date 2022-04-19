@@ -291,13 +291,13 @@ public class ArrayStartTools {
     }
 
     public void printArrayDiagonal(int[][] array) {
-        System.out.print("Основная диагональ: ");
+        System.out.print("Основная диагональ содержит следующие элементы: ");
         for (int i = array.length - 1; i >= 0; i--) {
             System.out.print(array[i][i] + " ");
         }
         System.out.println();
 
-        System.out.print("Побочная диагональ: ");
+        System.out.print("Побочная диагональ содержит следующие элементы: ");
         for (int i = array.length - 1; i >= 0; i--) {
             System.out.print(array[i][array.length - 1 - i] + " ");
         }
