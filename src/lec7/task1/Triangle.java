@@ -19,7 +19,7 @@ public class Triangle implements Figure {
 
     }
 
-    public boolean isTtiangle(PointTwoDem aPoint, PointTwoDem bPoint, PointTwoDem cPoint) {
+    private boolean isTtiangle(PointTwoDem aPoint, PointTwoDem bPoint, PointTwoDem cPoint) {
         return (TwoDemVector.vectorLength(aPoint, bPoint) + TwoDemVector.vectorLength(bPoint, cPoint)
                 > TwoDemVector.vectorLength(cPoint, aPoint)) &&
                 (TwoDemVector.vectorLength(bPoint, cPoint) + TwoDemVector.vectorLength(cPoint, aPoint)
