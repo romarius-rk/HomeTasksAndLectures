@@ -32,5 +32,8 @@ public class Runner {
         System.out.println(documentAbstract[7]);
 
         register.printDocInfo(reader.read("Enter document name"));
+
+
+
     }
 }

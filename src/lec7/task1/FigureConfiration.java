@@ -1,7 +1,6 @@
 package lec7.task1;
 
 import commons.PointTwoDem;
-import commons.TwoDemVector;
 
 public class FigureConfiration {
     public static void main(String[] args) {

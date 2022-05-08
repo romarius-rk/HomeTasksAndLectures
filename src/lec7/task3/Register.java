@@ -21,7 +21,7 @@ public class Register {
 
         for (DocumentAbstract i: registerData) {
             if(i!= null) {
-                if (Objects.equals(i.getDocName(), docName)) {
+                if (docName.equals(i.getDocName())) {
                     i.printInfo();
                     break;
                 }

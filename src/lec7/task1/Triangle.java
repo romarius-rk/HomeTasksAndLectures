@@ -1,7 +1,7 @@
 package lec7.task1;
 
 import commons.PointTwoDem;
-import commons.TwoDemVector;
+import commons.Vector2Tools;
 
 public class Triangle implements Figure {
     private PointTwoDem aPoint;
@@ -20,27 +20,27 @@ public class Triangle implements Figure {
     }
 
     private boolean isTtiangle(PointTwoDem aPoint, PointTwoDem bPoint, PointTwoDem cPoint) {
-        return (TwoDemVector.vectorLength(aPoint, bPoint) + TwoDemVector.vectorLength(bPoint, cPoint)
-                > TwoDemVector.vectorLength(cPoint, aPoint)) &&
-                (TwoDemVector.vectorLength(bPoint, cPoint) + TwoDemVector.vectorLength(cPoint, aPoint)
-                        > TwoDemVector.vectorLength(aPoint, bPoint)) &&
-                (TwoDemVector.vectorLength(aPoint, bPoint) + TwoDemVector.vectorLength(cPoint, aPoint)
-                        > TwoDemVector.vectorLength(bPoint, cPoint));
+        return (Vector2Tools.vectorLength(aPoint, bPoint) + Vector2Tools.vectorLength(bPoint, cPoint)
+                > Vector2Tools.vectorLength(cPoint, aPoint)) &&
+                (Vector2Tools.vectorLength(bPoint, cPoint) + Vector2Tools.vectorLength(cPoint, aPoint)
+                        > Vector2Tools.vectorLength(aPoint, bPoint)) &&
+                (Vector2Tools.vectorLength(aPoint, bPoint) + Vector2Tools.vectorLength(cPoint, aPoint)
+                        > Vector2Tools.vectorLength(bPoint, cPoint));
     }
 
     @Override
     public double calculatePerimeter() {
 
-        return TwoDemVector.vectorLength(aPoint, bPoint) +
-                TwoDemVector.vectorLength(bPoint, cPoint) +
-                TwoDemVector.vectorLength(cPoint, aPoint);
+        return Vector2Tools.vectorLength(aPoint, bPoint) +
+                Vector2Tools.vectorLength(bPoint, cPoint) +
+                Vector2Tools.vectorLength(cPoint, aPoint);
     }
 
     @Override
     public double calculateSquare() {
         return Math.sqrt((calculatePerimeter() / 2) *
-                ((calculatePerimeter() / 2) - TwoDemVector.vectorLength(aPoint, bPoint)) *
-                ((calculatePerimeter() / 2) - TwoDemVector.vectorLength(bPoint, cPoint)) *
-                ((calculatePerimeter() / 2) - TwoDemVector.vectorLength(cPoint, aPoint)));
+                ((calculatePerimeter() / 2) - Vector2Tools.vectorLength(aPoint, bPoint)) *
+                ((calculatePerimeter() / 2) - Vector2Tools.vectorLength(bPoint, cPoint)) *
+                ((calculatePerimeter() / 2) - Vector2Tools.vectorLength(cPoint, aPoint)));
     }
 }

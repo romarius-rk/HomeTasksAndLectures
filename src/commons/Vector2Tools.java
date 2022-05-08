@@ -1,6 +1,6 @@
 package commons;
 
-public class TwoDemVector {
+public class Vector2Tools {
 
     public static double vectorLength(PointTwoDem p1, PointTwoDem p2) {
         return Math.sqrt(Math.pow((p2.getX() - p1.getX()), 2) + Math.pow((p2.getY() - p1.getY()), 2));
