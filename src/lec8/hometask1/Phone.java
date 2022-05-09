@@ -25,20 +25,20 @@ public class Phone implements PhoneSkills {
             return;
         }
         if (!card.equals(this.card)) {
-            System.out.printf("Incoming call.\n%s: %d\n", card.getOwnerName(), card.getSimNumber());
+            System.out.printf("Incoming call.\n%s: %d\n", card.getOperator(), card.getSimNumber());
             return;
         }
         System.out.println("It's your phone number.");
     }
 
-    public void receiveCall(SimCard card, String photoInfo) {
+    public void receiveCall(SimCard card, Owner owner) {
         if (this.card == null){
             System.out.println("You have a premonition that someone is trying to call you.");
             return;
         }
         if (!card.equals(this.card)) {
-            System.out.printf("Incoming call.\n%s: %d\n%s\n", card.getOwnerName(),
-                    card.getSimNumber(), photoInfo);
+            System.out.printf("Incoming call.\n%s: %d\n%s\n%s\n", owner.getOwnerName(),
+                    card.getSimNumber(), card.getOperator(), owner.getPhotoInfo());
             return;
         }
         System.out.println("It's your phone number.");

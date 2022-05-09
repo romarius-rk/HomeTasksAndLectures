@@ -1,4 +1,8 @@
-package lec8.hometak2;
+package lec8.hometask2;
+
+import lec8.hometask2.medics.Dentist;
+import lec8.hometask2.medics.Surgeon;
+import lec8.hometask2.medics.Therapist;
 
 public class Runner {
     public static void main(String[] args) {

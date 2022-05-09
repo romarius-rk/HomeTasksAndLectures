@@ -1,6 +1,8 @@
-package lec8.hometak2;
+package lec8.hometask2.medics;
 
-public class Dentist extends Medic{
+import lec8.hometask2.Medic;
+
+public class Dentist extends Medic {
 
     public Dentist(int age, String typeMedicine, int experience) {
         super(age, typeMedicine, experience);

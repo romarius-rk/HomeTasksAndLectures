@@ -1,11 +1,11 @@
 package lec8.hometask1;
 
 public class SimCard {
-    private final String ownerName;
+    private final String operator;
     private final long simNumber;
 
-    public SimCard(String ownerName,long simNumber){
-        this.ownerName = ownerName;
+    public SimCard(String operator,long simNumber){
+        this.operator = operator;
         this.simNumber = simNumber;
     }
 
@@ -14,11 +14,11 @@ public class SimCard {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SimCard card = (SimCard) o;
-        return simNumber == card.simNumber && ownerName.equals(card.ownerName);
+        return simNumber == card.simNumber && operator.equals(card.operator);
     }
 
-    public String getOwnerName() {
-        return ownerName;
+    public String getOperator() {
+        return operator;
     }
 
     public long getSimNumber() {

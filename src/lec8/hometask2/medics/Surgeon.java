@@ -1,4 +1,6 @@
-package lec8.hometak2;
+package lec8.hometask2.medics;
+
+import lec8.hometask2.Medic;
 
 public class Surgeon extends Medic {
 

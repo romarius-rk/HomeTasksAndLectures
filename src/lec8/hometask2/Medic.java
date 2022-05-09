@@ -1,4 +1,4 @@
-package lec8.hometak2;
+package lec8.hometask2;
 
 public abstract class Medic implements Healing {
     private int age;
